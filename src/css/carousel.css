@@ -1,0 +1,752 @@
+@import url("https://fonts.googleapis.com/css2?family=Bevan:ital@0;1&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bevan:ital@0;1&family=Comfortaa:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --primary-color: #693eff;
+  --text-color: #333;
+  --text-secondary: #555;
+  --bg-color: #fff;
+  --transition-speed: 0.8s;
+
+  /* Item position styles */
+  /* --item-previous-transform: translateX(-100%) translateY(-5%) scale(0.85); */
+  --item-previous-filter: blur(15px);
+  --item-previous-zIndex: 9;
+  --item-previous-opacity: 0.5;
+  --item-previous-transform: translateX(-70%) translateY(-5%) scale(0.85);
+  --item-next-transform: translateX(70%) translateY(10%) scale(1);
+
+  --item-current-transform: translateX(0);
+  --item-current-filter: blur(0px);
+  --item-current-zIndex: 10;
+  --item-current-opacity: 1;
+
+  /* --item-next-transform: translateX(100%) translateY(10%) scale(0.85); */
+  --item-next-filter: blur(5px);
+  --item-next-zIndex: 8;
+  --item-next-opacity: 0.7;
+}
+
+/* Base carousel styling */
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  overflow: hidden;
+  margin-top: -50px;
+  font-family: "Poppins", sans-serif;
+}
+
+.carousel .list {
+  position: absolute;
+  width: 1140px;
+  max-width: 90%;
+  height: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.carousel .list .item {
+  position: absolute;
+  left: 0;
+  width: 70%;
+  height: 100%;
+  font-size: 15px;
+  transition: transform var(--transition-speed) ease-in-out,
+    filter var(--transition-speed) ease-in-out,
+    opacity var(--transition-speed) ease-in-out;
+}
+
+/* Hide items beyond the visible three */
+.carousel .list .item:nth-child(n + 4) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Item positioning */
+.carousel .list .item-previous {
+  transform: var(--item-previous-transform);
+  filter: var(--item-previous-filter);
+  z-index: var(--item-previous-zIndex);
+  opacity: var(--item-previous-opacity);
+  pointer-events: none;
+}
+
+.carousel .list .item-current {
+  transform: var(--item-current-transform);
+  filter: var(--item-current-filter);
+  z-index: var(--item-current-zIndex);
+  opacity: var(--item-current-opacity);
+}
+
+.carousel .list .item-next {
+  transform: var(--item-next-transform);
+  filter: var(--item-next-filter);
+  z-index: var(--item-next-zIndex);
+  opacity: var(--item-next-opacity);
+}
+
+/* Image styling */
+.carousel .list .item img {
+  width: 50%;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: right 1.2s ease-in-out;
+  object-fit: contain;
+  max-height: 90%;
+}
+
+/* Content introduction section */
+.carousel .list .item .introduce {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.carousel .list .item-current .introduce {
+  opacity: 1;
+  pointer-events: auto;
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0.5s ease;
+}
+
+.carousel .list .item .introduce .title {
+  font-size: 2em;
+  font-weight: 500;
+  line-height: 1em;
+  margin-bottom: 0.5em;
+  color: var(--text-color);
+}
+
+.carousel .list .item .introduce .topic {
+  font-size: 2.5em;
+  font-weight: 500;
+  margin-bottom: 0.5em;
+  color: var(--text-color);
+}
+
+.carousel .list .item .introduce .topic {
+  font-family: "Bevan", serif;
+}
+
+.carousel .list .item .introduce .des {
+  font-size: small;
+  color: var(--text-secondary);
+  margin-bottom: 1.5em;
+  line-height: 1.5;
+}
+
+.carousel .list .item .introduce .seeMore {
+  font-family: "Poppins", sans-serif;
+  margin-top: 1.2em;
+  padding: 8px 0;
+  border: none;
+  border-bottom: 1px solid var(--text-secondary);
+  background-color: transparent;
+  font-weight: 500;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.option-tag {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 4px;
+  border-radius: 20px;
+  border: 1px solid var(--primary-color);
+  background: transparent;
+  color: var(--primary-color);
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.option-tag:hover,
+.option-tag.selected {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.carousel .list .item .introduce .seeMore:hover {
+  background: #eee;
+  transform: translateY(-2px);
+}
+
+.carousel .list .item .introduce .seeMore:active {
+  transform: translateY(0);
+}
+
+/* Animation for content entry */
+.carousel .list .item-current .introduce .title,
+.carousel .list .item-current .introduce .topic,
+.carousel .list .item-current .introduce .des,
+.carousel .list .item-current .introduce .seeMore {
+  opacity: 0;
+  animation: showContent 0.5s 0.3s ease-in-out forwards;
+}
+
+@keyframes showContent {
+  from {
+    transform: translateY(-20px);
+    filter: blur(5px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.carousel .list .item-current .introduce .topic {
+  animation-delay: 0.5s;
+}
+
+.carousel .list .item-current .introduce .des {
+  animation-delay: 0.7s;
+}
+
+.carousel .list .item-current .introduce .seeMore {
+  animation-delay: 0.9s;
+}
+
+/* Animation for next/prev transitions */
+.carousel.next .item-previous {
+  animation: moveToOffscreenLeft 0.5s ease-in-out forwards;
+}
+
+.carousel.next .item-current {
+  animation: moveFromCurrentToPrevious 0.8s ease-in-out forwards;
+}
+
+.carousel.next .item-next {
+  animation: moveFromNextToCurrent 0.8s ease-in-out forwards;
+}
+
+.carousel.prev .item-previous {
+  animation: moveFromPreviousToCurrent 0.8s ease-in-out forwards;
+}
+
+.carousel.prev .item-current {
+  animation: moveFromCurrentToNext 0.8s ease-in-out forwards;
+}
+
+.carousel.prev .item-next {
+  animation: moveToOffscreenRight 0.5s ease-in-out forwards;
+}
+
+@keyframes moveToOffscreenLeft {
+  to {
+    transform: translateX(-200%) scale(0.7);
+    opacity: 0;
+  }
+}
+
+@keyframes moveToOffscreenRight {
+  to {
+    transform: translateX(200%) scale(0.7);
+    opacity: 0;
+  }
+}
+
+@keyframes moveFromCurrentToPrevious {
+  from {
+    transform: var(--item-current-transform);
+    filter: var(--item-current-filter);
+    opacity: var(--item-current-opacity);
+  }
+  to {
+    transform: var(--item-previous-transform);
+    filter: var(--item-previous-filter);
+    opacity: var(--item-previous-opacity);
+  }
+}
+
+@keyframes moveFromNextToCurrent {
+  from {
+    transform: var(--item-next-transform);
+    filter: var(--item-next-filter);
+    opacity: var(--item-next-opacity);
+  }
+  to {
+    transform: var(--item-current-transform);
+    filter: var(--item-current-filter);
+    opacity: var(--item-current-opacity);
+  }
+}
+
+@keyframes moveFromPreviousToCurrent {
+  from {
+    transform: var(--item-previous-transform);
+    filter: var(--item-previous-filter);
+    opacity: var(--item-previous-opacity);
+  }
+  to {
+    transform: var(--item-current-transform);
+    filter: var(--item-current-filter);
+    opacity: var(--item-current-opacity);
+  }
+}
+
+@keyframes moveFromCurrentToNext {
+  from {
+    transform: var(--item-current-transform);
+    filter: var(--item-current-filter);
+    opacity: var(--item-current-opacity);
+  }
+  to {
+    transform: var(--item-next-transform);
+    filter: var(--item-next-filter);
+    opacity: var(--item-next-opacity);
+  }
+}
+
+/* Detail view styles */
+.carousel .list .item .detail {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease; /* Transition plus rapide */
+  position: absolute; /* S'assurer que l'élément est bien positionné */
+  z-index: -1;
+}
+
+/* Show detail view */
+.carousel.showDetail .list .item-next {
+  left: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.carousel.showDetail .list .item-previous {
+  left: -100%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.carousel.showDetail .list .item-current {
+  width: 100%;
+}
+
+.carousel.showDetail .list .item-current .introduce {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.carousel.showDetail .list .item-current img {
+  right: 65%;
+  width: 35%;
+  transition: right 1s ease-in-out;
+}
+
+/* Show detail view */
+.carousel.showDetail .list .item-current .detail {
+  opacity: 1;
+  width: 45%;
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: right;
+  pointer-events: auto;
+  transition: opacity 0.5s 0.5s ease-in-out;
+  z-index: 1;
+}
+
+.carousel:not(.showDetail) .list .item .detail {
+  opacity: 0 !important;
+  z-index: -1;
+  transition: opacity 0.1s ease, z-index 0s 0.1s;
+}
+
+/* Show detail view title */
+.carousel.showDetail .list .item-current .detail .title {
+  font-size: 2.5em;
+  font-weight: 500;
+  margin-bottom: 0.5em;
+  color: var(--text-color);
+}
+
+.carousel.showDetail .list .item-current .detail .des {
+  font-size: 1em;
+  color: var(--text-secondary);
+  margin-bottom: 1.5em;
+  line-height: 1.5;
+}
+
+.carousel.showDetail .list .item-current .detail .specifications {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  border-top: 1px solid rgba(85, 85, 85, 0.3);
+  margin-top: 20px;
+  padding-top: 20px;
+  justify-content: flex-end;
+}
+
+.carousel.showDetail .list .item-current .detail .specifications div {
+  width: 100px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.carousel.showDetail .list .item-current .detail .specifications .spec-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 0.9em;
+  color: var(--text-secondary);
+}
+
+.carousel.showDetail .list .item-current .detail .specifications .spec-value {
+  font-size: 1em;
+  color: var(--text-color);
+}
+
+.carousel.showDetail .list .item-current .detail .checkout {
+  margin-top: 2em;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.carousel.showDetail .list .item-current .checkout button {
+  font-family: "Poppins", sans-serif;
+  background-color: transparent;
+  border: 1px solid rgba(85, 85, 85, 0.5);
+  padding: 10px 15px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.carousel.showDetail .list .item-current .checkout .add-to-cart:hover {
+  background-color: #eee;
+}
+
+.carousel.showDetail .list .item-current .checkout .checkout-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.carousel.showDetail .list .item-current .checkout .checkout-btn:hover {
+  background-color: #5426e0;
+  border-color: #5426e0;
+}
+
+/* Animation for detail view content */
+.carousel.showDetail .list .item-current .detail .title,
+.carousel.showDetail .list .item-current .detail .des,
+.carousel.showDetail .list .item-current .detail .specifications,
+.carousel.showDetail .list .item-current .detail .checkout {
+  opacity: 0;
+  animation: showContent 0.5s 0.8s ease-in-out forwards;
+}
+
+.carousel.showDetail .list .item-current .detail .des {
+  animation-delay: 1s;
+}
+
+.carousel.showDetail .list .item-current .detail .specifications {
+  animation-delay: 1.2s;
+}
+
+.carousel.showDetail .list .item-current .detail .checkout {
+  animation-delay: 1.4s;
+}
+
+/* Navigation arrows */
+.arrows {
+  position: absolute;
+  bottom: 60px;
+  width: 1140px;
+  max-width: 90%;
+  display: flex;
+  justify-content: space-between;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+}
+
+#prev,
+#next {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-family: monospace;
+  border: 1px solid rgba(85, 85, 85, 0.5);
+  font-size: 20px;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+#prev:hover,
+#next:hover {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+#prev:disabled,
+#next:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #eee;
+}
+
+#back {
+  position: absolute;
+  z-index: 100;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: none;
+  border-bottom: 1px solid #555;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  letter-spacing: 2px;
+  background-color: transparent;
+  padding: 10px 15px;
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 0.5s, transform 0.3s;
+}
+
+#back:hover {
+  transform: translateX(-50%) translateY(-3px);
+}
+
+#back.visible {
+  opacity: 1;
+}
+
+#back.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.carousel.showDetail #prev,
+.carousel.showDetail #next {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Background gradient effect */
+.carousel::before {
+  width: 500px;
+  height: 300px;
+  content: "";
+  background-image: linear-gradient(70deg, #dc422a, #693eff);
+  position: absolute;
+  z-index: -1;
+  border-radius: 20% 30% 80% 10%;
+  filter: blur(150px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-10%, -50%);
+  transition: transform 1s, filter 1s;
+  opacity: 0.5;
+}
+
+.carousel.showDetail::before {
+  transform: translate(-100%, -50%) rotate(90deg);
+  filter: blur(130px);
+}
+
+/* Slide indicators */
+.indicators {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 20;
+}
+
+.indicators .indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(85, 85, 85, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicators .indicator.active {
+  background-color: var(--primary-color);
+  transform: scale(1.2);
+}
+
+.indicators .indicator:hover {
+  background-color: rgba(85, 85, 85, 0.6);
+}
+
+.indicators .indicator.active:hover {
+  background-color: var(--primary-color);
+}
+
+.carousel.showDetail .indicators {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 1200px) {
+  .carousel .list .item-current .introduce {
+    width: 350px;
+  }
+
+  .carousel.showDetail .list .item-current .detail .title {
+    font-size: 2.2em;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  /* For tablets */
+  .carousel .list .item {
+    width: 90%;
+  }
+
+  .carousel .list .item-current .introduce {
+    width: 300px;
+  }
+
+  .carousel.showDetail .list .item-current .detail .specifications {
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 10px;
+  }
+
+  .carousel.showDetail .list .item-current .detail .title {
+    font-size: 2em;
+  }
+
+  .carousel.showDetail .list .item-current img {
+    right: 50%;
+  }
+
+  .carousel.showDetail .list .item-current .detail {
+    width: 50%;
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  /* For mobile */
+  .carousel {
+    height: 600px;
+  }
+
+  .carousel .list .item {
+    width: 100%;
+    font-size: 10px;
+  }
+
+  .carousel .list {
+    height: 100%;
+  }
+
+  .carousel .list .item-current .introduce {
+    width: 50%;
+    max-width: 200px;
+  }
+
+  .carousel .list .item .introduce .title {
+    font-size: 1.5em;
+  }
+
+  .carousel .list .item .introduce .topic {
+    font-size: 2em;
+  }
+
+  .carousel .list .item img {
+    width: 45%;
+  }
+
+  .carousel.showDetail .list .item-current img {
+    right: 50%;
+    width: 40%;
+  }
+
+  .carousel.showDetail .list .item-current .detail {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    width: 55%;
+    box-sizing: border-box;
+  }
+
+  .carousel .list .item-current .introduce .des,
+  .carousel.showDetail .list .item-current .detail .des {
+    max-height: 80px;
+    overflow-y: auto;
+    padding-right: 5px;
+  }
+
+  .carousel.showDetail .list .item-current .detail .checkout {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .carousel.showDetail .list .item-current .detail .title {
+    font-size: 1.5em;
+  }
+
+  .arrows {
+    bottom: 100px;
+  }
+
+  #back {
+    bottom: 30px;
+  }
+
+  .indicators {
+    bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .carousel {
+    height: 500px;
+  }
+
+  .carousel .list .item-current .introduce {
+    width: 45%;
+    max-width: 150px;
+  }
+
+  .carousel .list .item .introduce .title {
+    font-size: 1.2em;
+  }
+
+  .carousel .list .item .introduce .topic {
+    font-size: 1.5em;
+  }
+
+  .carousel.showDetail .list .item-current img {
+    width: 35%;
+    right: 60%;
+  }
+
+  .carousel.showDetail .list .item-current .detail {
+    width: 65%;
+  }
+
+  .carousel.showDetail .list .item-current .detail .specifications div {
+    width: 80px;
+  }
+}
