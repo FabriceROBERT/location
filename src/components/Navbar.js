@@ -119,15 +119,15 @@ export default function Navbar() {
             <MenuItems className="mt-1 bg-white shadow rounded-md p-2">
               <MenuItem>
                 <a
-                  className="block px-4 py-2 text-sm text-gray-700 hover:text-indigo-600"
-                  href="#">
+                  href="reservation-videobooth"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:text-indigo-600">
                   Vidéobooth 360°
                 </a>
               </MenuItem>
               <MenuItem>
                 <a
                   className="block px-4 py-2 text-sm text-gray-700 hover:text-indigo-600"
-                  href="#">
+                  href="reservation-chateau">
                   Structure gonflable
                 </a>
               </MenuItem>
