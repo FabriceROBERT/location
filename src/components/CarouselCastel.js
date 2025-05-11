@@ -1,6 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
-import ChateauImg from "../assets/img/25 avr. 2025, 19_02_08.png"; // Renommer le fichier avec un nom sans espace ni virgule pour éviter des problèmes
+import ChateauImg from "../assets/img/25 avr. 2025, 19_02_08.png";
 
 export default function CarouselCastel() {
   const settings = {

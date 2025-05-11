@@ -1,14 +1,5 @@
 import React, { useState } from "react";
-import {
-  Phone,
-  Mail,
-  Map,
-  Calendar,
-  Camera,
-  PlayCircle,
-  Image,
-} from "lucide-react";
-import VideoboothTitle from "../assets/img/Festif Location - Tarif Vidéobooth (2).png";
+import { Calendar, Camera, PlayCircle, Image } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Femmes from "../assets/img/femmes.webp";
 import Femmes2 from "../assets/img/femme.webp";
@@ -18,7 +9,6 @@ import VideoboothPhoto3 from "../assets/img/fotomaton-video-360.webp";
 import VideoboothPhoto4 from "../assets/img/6450aeee8b49937d2a4135ac-360-photo-booth-video-booth-platform-500x500.webp";
 import Container from "./Container";
 
-// Exemple galerie
 const galleryImages = [
   { id: 1, src: Femmes, alt: "Image 1" },
   { id: 2, src: Femmes2, alt: "Image 2" },

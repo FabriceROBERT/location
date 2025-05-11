@@ -1,6 +1,5 @@
 import React from "react";
 import { FaPhone, FaEnvelope } from "react-icons/fa";
-import Facebook from "../assets/svg/facebook-f.svg";
 import Instagram from "../assets/svg/instagram.svg";
 import Snapchat from "../assets/svg/snapchat.svg";
 import Whatsapp from "../assets/svg/whatsapp.svg";

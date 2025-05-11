@@ -1,7 +1,6 @@
 import React from "react";
 import ChateauImg from "../assets/img/Chateau-gonflable.jpg";
 import Container from "./Container";
-import { FaArrowRight } from "react-icons/fa";
 
 export default function CastleHeader() {
   return (

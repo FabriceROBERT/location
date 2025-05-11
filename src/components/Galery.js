@@ -5,7 +5,6 @@ export default function Galery() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
-  // Classe conditionnelle
   const classNames = (...classes) => classes.filter(Boolean).join(" ");
 
   useEffect(() => {

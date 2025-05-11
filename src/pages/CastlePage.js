@@ -3,7 +3,6 @@ import Navbar from "../components/Navbar";
 import CastleHeader from "../components/CastleHeader";
 import Booking from "../components/Booking";
 import Footer from "../components/Footer";
-import CarouselCastel from "../components/CarouselCastel";
 import CastleDetail from "../components/CastleDetail";
 import AdditionalService from "../components/AdditionalService";
 
