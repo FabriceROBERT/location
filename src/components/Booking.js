@@ -1,7 +1,7 @@
 import React from "react";
 import Sticker from "../assets/img/sticker-1.png";
 import CottonCandy from "../assets/img/cotton candy.png";
-import Popcorn from "../assets/img/Popcorn Sticker-Photoroom.png";
+import Popcorn from "../assets/img/Popcorn Sticker-Photoroom.webp";
 import HeadingTitles from "../typography/HeadingTitles";
 import { useForm } from "react-hook-form";
 

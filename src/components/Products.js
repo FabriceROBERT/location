@@ -1,6 +1,6 @@
 import { CheckIcon } from "@heroicons/react/20/solid";
-import Chateau from "../assets/img/chateau-1.png";
-import Videobooth from "../assets/img/videobooth-1-Photoroom.png";
+import Chateau from "../assets/img/chateau-1.webp";
+import Videobooth from "../assets/img/videobooth-1-Photoroom.webp";
 import { useEffect, useState, useRef } from "react";
 import "../css/App.css";
 
