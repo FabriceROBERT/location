@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Logo from "../assets/img/Logo-Sans-Bg.png";
+import Logo from "../assets/img/Logo-Sans-Bg.webp";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { HiMenu, HiX } from "react-icons/hi";
 import { useLocation } from "react-router-dom";
