@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Calendar, Camera, PlayCircle, Image } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import Femmes from "../assets/img/femmes.webp";
-import Femmes2 from "../assets/img/femme.webp";
-import VideoboothPhoto from "../assets/img/5518c04efe92be1bbaa7a3066f2507c7140d9fef.webp";
-import VideoboothPhoto2 from "../assets/img/videobooth-photobooth360-mariage-location_3_187143-172143919291440.jpeg";
-import VideoboothPhoto3 from "../assets/img/fotomaton-video-360.webp";
-import VideoboothPhoto4 from "../assets/img/6450aeee8b49937d2a4135ac-360-photo-booth-video-booth-platform-500x500.webp";
-import Container from "./Container";
+import Femmes from "../../assets/img/femmes.webp";
+import Femmes2 from "../../assets/img/femme.webp";
+import VideoboothPhoto from "../../assets/img/5518c04efe92be1bbaa7a3066f2507c7140d9fef.webp";
+import VideoboothPhoto2 from "../../assets/img/videobooth-photobooth360-mariage-location_3_187143-172143919291440.jpeg";
+import VideoboothPhoto3 from "../../assets/img/fotomaton-video-360.webp";
+import VideoboothPhoto4 from "../../assets/img/6450aeee8b49937d2a4135ac-360-photo-booth-video-booth-platform-500x500.webp";
+import Container from "../Container";
 
 const galleryImages = [
   { id: 1, src: Femmes, alt: "Image 1" },

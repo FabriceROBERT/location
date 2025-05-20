@@ -1,6 +1,6 @@
 import React from "react";
-import ChateauImg from "../assets/img/Chateau-gonflable.jpg";
-import Container from "./Container";
+import ChateauImg from "../../assets/img/Chateau-gonflable.jpg";
+import Container from "../Container";
 
 export default function CastleHeader() {
   return (

@@ -1,5 +1,6 @@
 import React from "react";
-import { FaPhone, FaEnvelope } from "react-icons/fa";
+import { FaPhone, FaEnvelope, FaMapPin } from "react-icons/fa";
+
 import Instagram from "../assets/svg/instagram.svg";
 import Snapchat from "../assets/svg/snapchat.svg";
 import Whatsapp from "../assets/svg/whatsapp.svg";
@@ -54,6 +55,9 @@ export default function Footer() {
             festif.location75@gmail.com
           </div>
           <p className="text-sm text-gray-400 mb-2">Disponibilité : 7j/7</p>
+          <span className="text-sm text-gray-400 mb-2 flex gap-1 flex-row">
+            <FaMapPin /> Île-De-France et grandes villes
+          </span>
           <div className="flex gap-3 mt-2">
             <a
               href="https://www.instagram.com/festif.location"
@@ -95,7 +99,17 @@ export default function Footer() {
         <a href="/cvg" className="hover:text-white">
           Mentions légales
         </a>
-        <p>Site réalisé par Festif.location</p>
+        <p>
+          Site réalisé par{" "}
+          <a
+            className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+            href="https://www.linkedin.com/in/fabrice-robert9536/"
+            target="_blank"
+            rel="noreferrer">
+            {" "}
+            ROBERT Fabrice
+          </a>
+        </p>
       </div>
     </footer>
   );

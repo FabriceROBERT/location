@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import Marquee from "./Marquee";
+import Marquee from "../Marquee";
 
 export default function Galery() {
   const [isVisible, setIsVisible] = useState(false);

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Container from "./Container";
+import Container from "../Container";
 import { TbTriangleFilled } from "react-icons/tb";
-import VideoImage from "../assets/img/femmes.webp";
+import VideoImage from "../../assets/img/femmes.webp";
 
 export default function VideoboothHeader() {
   const [isPlaying, setIsPlaying] = useState(false);

@@ -1,7 +1,7 @@
 import React from "react";
 import Sticker from "../assets/img/sticker-1.png";
 import CottonCandy from "../assets/img/cotton candy.png";
-import Popcorn from "../assets/img/Popcorn Sticker-Photoroom.webp";
+import Popcorn from "../assets/img/Popcorn Sticker-Photoroom.png";
 import HeadingTitles from "../typography/HeadingTitles";
 import { useForm } from "react-hook-form";
 
@@ -139,7 +139,7 @@ Message : ${data.message}
             <select
               name="event"
               id="event"
-              className="border border-gray-400 outline-none focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-md p-5 bg-white"
+              className="border appearance-none border-gray-400 outline-none focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-md p-5 bg-white"
               {...register("event")}>
               <option value="">Sélectionnez un type d'événement</option>
               <option value="mariage">Mariage</option>
@@ -157,7 +157,7 @@ Message : ${data.message}
               name="date"
               id="date"
               autoComplete="off"
-              className="border border-gray-400 outline-none focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-md p-5 bg-white"
+              className="border appearance-none border-gray-400 outline-none focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-md p-5 bg-white"
               {...register("date")}
             />
           </div>
@@ -167,7 +167,7 @@ Message : ${data.message}
             </label>
             <select
               id="equipment"
-              className="border border-gray-400 outline-none focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-md p-5 bg-white"
+              className="border appearance-none border-gray-400 outline-none focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-md p-5 bg-white"
               {...register("equipment", { required: true })}>
               <option value="">Sélectionnez un équipement</option>
               <option value="videobooth">Videobooth 360° uniquement</option>
@@ -183,7 +183,7 @@ Message : ${data.message}
             <select
               key={equipment}
               id="duration"
-              className="border border-gray-400 outline-none focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-md p-5 bg-white"
+              className="border appearance-none border-gray-400 outline-none focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-md p-5 bg-white"
               {...register("duration", { required: true })}>
               <option value="">Sélectionnez une durée</option>
 

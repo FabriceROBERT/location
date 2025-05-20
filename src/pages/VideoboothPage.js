@@ -2,10 +2,10 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Booking from "../components/Booking";
-import VideoboothHeader from "../components/VideoboothHeader";
-import Steps from "../components/Steps";
-import FAQ from "../components/FAQ";
-import ExperienceSection from "../components/ExperienceSection.js";
+import VideoboothHeader from "../components/videoboothSide/VideoboothHeader.js";
+import Steps from "../components/videoboothSide/Steps";
+import FAQ from "../components/videoboothSide/FAQ";
+import ExperienceSection from "../components/videoboothSide/ExperienceSection.js";
 
 export default function VideoboothPage() {
   return (

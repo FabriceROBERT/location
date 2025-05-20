@@ -1,10 +1,10 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import CastleHeader from "../components/CastleHeader";
+import CastleHeader from "../components/castleSide/CastleHeader";
 import Booking from "../components/Booking";
 import Footer from "../components/Footer";
-import CastleDetail from "../components/CastleDetail";
-import AdditionalService from "../components/AdditionalService";
+import CastleDetail from "../components/castleSide/CastleDetail";
+import AdditionalService from "../components/castleSide/AdditionalService";
 
 export default function CastlePage() {
   return (

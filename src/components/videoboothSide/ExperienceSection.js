@@ -1,7 +1,7 @@
 import React from "react";
-import Container from "./Container";
-import Img1 from "../assets/img/spinner-360-videobooth.gif";
-import Img2 from "../assets/img/8c92da0b9ef3c1866979b766bf127e9e773593ee.jpg";
+import Container from "../Container";
+import Img1 from "../../assets/img/spinner-360-videobooth.gif";
+import Img2 from "../../assets/img/8c92da0b9ef3c1866979b766bf127e9e773593ee.jpg";
 
 const content = [
   {

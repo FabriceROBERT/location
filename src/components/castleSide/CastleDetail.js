@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import ChateauImg from "../assets/img/Chateau-gonflable.jpg";
-import ChateauImg2 from "../assets/img/Chateau-gonflable-2.jpg";
-import ChateauImg3 from "../assets/img/Chateau-gonflable-3.jpg";
+import ChateauImg from "../../assets/img/Chateau-gonflable.jpg";
+import ChateauImg2 from "../../assets/img/Chateau-gonflable-2.jpg";
+import ChateauImg3 from "../../assets/img/Chateau-gonflable-3.jpg";
 
 export default function CastleDetail() {
   const [mainImage, setMainImage] = useState(ChateauImg);

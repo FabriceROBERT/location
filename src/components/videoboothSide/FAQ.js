@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Container from "./Container";
+import Container from "../Container";
 import { ChevronDown } from "lucide-react";
 
 const faqs = [
