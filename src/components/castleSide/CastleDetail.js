@@ -2,17 +2,15 @@ import React, { useState } from "react";
 import ChateauImg from "../../assets/img/Chateau-gonflable.jpg";
 import ChateauImg2 from "../../assets/img/Chateau-gonflable-2.jpg";
 import ChateauImg3 from "../../assets/img/Chateau-gonflable-3.jpg";
+// Ajoutez vos nouvelles images pour le second château
+import ChateauImg4 from "../../assets/img/Castle2.webp";
+import ChateauImg5 from "../../assets/img/Castle3.webp";
+import ChateauImg6 from "../../assets/img/Castle4.webp";
+
+import CastleCard from "./CastleCard";
 
 export default function CastleDetail() {
-  const [mainImage, setMainImage] = useState(ChateauImg);
-
-  const images = [
-    { src: ChateauImg, alt: "Vue principale du château gonflable" },
-    { src: ChateauImg2, alt: "Vue latérale du château gonflable" },
-    { src: ChateauImg3, alt: "Vue avec toboggan du château gonflable" },
-  ];
-
-  const features = [
+  const commonFeatures = [
     { icon: "🎮", text: "Aire de jeu combinée" },
     { icon: "🛝", text: "Toboggan + Zone de rebond fermée" },
     { icon: "👶", text: "6-8 enfants max" },
@@ -24,89 +22,56 @@ export default function CastleDetail() {
     { icon: "🏠", text: "Intérieur ou extérieur" },
   ];
 
+  const multicolorXXL = [
+    { icon: "🎮", text: "Aire de jeu XXL" },
+    { icon: "🛝", text: "Multi-toboggan + Grande zone de rebond" },
+    { icon: "👶", text: "10-12 enfants max" },
+    { icon: "🧒", text: "De 5 à 10 ans" },
+    { icon: "📏", text: "Dimensions : 424cm x 300m x 240m" },
+    { icon: "✅", text: "Normes CE" },
+    { icon: "🧹", text: "Nettoyage systématique" },
+    { icon: "💨", text: "Souffleur industriel fourni" },
+    { icon: "🏠", text: "Extérieur uniquement" },
+    { icon: "🔴", text: "Piscine à balles colorées en supplément" },
+  ];
+
+  const castles = [
+    {
+      title: "Château Gonflable Aventure",
+      description:
+        "Offrez à votre enfant un anniversaire inoubliable avec notre château gonflable coloré et amusant ! Idéal pour les jeunes enfants, il apportera une touche de magie à toutes vos fêtes de famille, kermesses, ou événements en plein air.",
+      images: [
+        { src: ChateauImg, alt: "Vue principale du château gonflable" },
+        { src: ChateauImg2, alt: "Vue latérale du château gonflable" },
+        { src: ChateauImg3, alt: "Vue avec toboggan du château gonflable" },
+      ],
+      features: commonFeatures,
+      price: 90,
+    },
+    {
+      title: "Château Multicolore XXL",
+      description:
+        "Notre château gonflable multicolore XXL avec ses toboggans doubles et sa grande zone de jeu ! Parfait pour des groupes plus importants et les enfants plus grands. Avec ses couleurs vives et ses multiples espaces de jeu, c'est l'attraction parfaite pour vos événements.",
+      images: [
+        { src: ChateauImg4, alt: "Vue principale du château jungle" },
+        { src: ChateauImg5, alt: "Vue latérale du château jungle" },
+        { src: ChateauImg6, alt: "Vue avec multi-toboggan du château jungle" },
+      ],
+      features: multicolorXXL,
+      price: 120,
+    },
+  ];
+
   return (
-    <div className="w-full mx-auto py-8 px-4 bg-white rounded-lg shadow-md">
-      <div className="heroTopFont">
-        <h1 className="text-3xl font-bold pb-20 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent text-center">
-          Château Gonflable Aventure
-        </h1>
-      </div>
-      {/* Main content section */}
-      <div className="flex flex-col lg:flex-row gap-8 mb-12">
-        {/* Main image */}
-        <div className="lg:w-1/2">
-          <div className="relative rounded-lg overflow-hidden shadow-lg h-96">
-            <img
-              src={mainImage}
-              alt="Château gonflable"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-purple-900/70 to-transparent p-4">
-              <span className="inline-block text-white bg-purple-900 font-bold px-3 py-1 rounded-full text-sm">
-                90€ la journée
-              </span>
-            </div>
+    <div>
+      <div className="overflow-x-auto scrollbar-hide snap-x snap-mandatory flex gap-6 pb-4 lg:block lg:space-y-8">
+        {castles.map((castle, index) => (
+          <div
+            key={index}
+            className="min-w-[90%] md:min-w-[70%] lg:min-w-full snap-start">
+            <CastleCard {...castle} />
           </div>
-
-          {/* Thumbnail gallery */}
-          <div className="flex justify-center mt-4 gap-3">
-            {images.map((image, index) => (
-              <div
-                key={index}
-                className={`w-20 h-20 rounded-md overflow-hidden cursor-pointer border-2 transition-all ${
-                  mainImage === image.src
-                    ? "border-purple-600 scale-105"
-                    : "border-gray-200 opacity-70 hover:opacity-100"
-                }`}
-                onClick={() => setMainImage(image.src)}>
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Details section */}
-        <div className="lg:w-1/2 flex flex-col">
-          <div className="bg-purple-50 p-6 rounded-lg shadow-md flex-grow">
-            <h2 className="text-2xl font-bold text-purple-800 mb-4">
-              Description
-            </h2>
-            <p className="text-gray-700 mb-6 leading-relaxed">
-              Offrez à votre enfant un anniversaire inoubliable avec notre
-              château gonflable coloré et amusant ! Idéal pour les jeunes
-              enfants, il apportera une touche de magie à toutes vos fêtes de
-              famille, kermesses, ou événements en plein air.
-            </p>
-            <h3 className="text-xl font-semibold text-purple-700 mb-3">
-              Caractéristiques
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
-              {features.map((feature, index) => (
-                <div
-                  key={index}
-                  className="flex items-center bg-white p-3 rounded-lg shadow-sm">
-                  <span className="text-xl mr-2">{feature.icon}</span>
-                  <span className="text-gray-800">{feature.text}</span>
-                </div>
-              ))}
-            </div>
-            <div className="mt-auto">
-              <div className="bg-yellow-100 border-l-4 border-yellow-500 p-4 rounded-r-lg mb-6">
-                <p className="text-yellow-800 font-medium">
-                  <span className="font-bold">
-                    Matériel propre et entretenu
-                  </span>{" "}
-                  : Nous garantissons un nettoyage systématique entre chaque
-                  location pour la sécurité des enfants.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
       {/* Reservation section */}
       <div

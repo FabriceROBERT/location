@@ -76,7 +76,8 @@ export default function Steps({ id }) {
         "Filtres personnalisés, musique au choix",
         "Livraison et désinstallation",
         "Accessoires",
-        "Barrières de sécurité et tapis rouge",
+        "Eclairage exterieur",
+        "Tapis rouge",
       ],
     },
     {
@@ -90,9 +91,10 @@ export default function Steps({ id }) {
         "Filtres personnalisés, musique au choix",
         "Livraison et désinstallation",
         "Accessoires",
+        "Eclairage exterieur",
         "Barrières de sécurité et tapis rouge",
         "Propulseur de fumée",
-        "Chevalet personnalisé",
+        "Chevalet personnalisé de l'événement",
       ],
     },
   ];
@@ -161,7 +163,13 @@ export default function Steps({ id }) {
                     ))}
                   </ul>
                 </div>
-                <button className="mt-6 w-full bg-white text-indigo-600 font-semibold py-2 px-4 rounded-lg hover:bg-gray-100 transition">
+                <button
+                  onClick={() =>
+                    document
+                      .getElementById("Booking")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
+                  className="mt-6 w-full bg-white text-indigo-600 font-semibold py-2 px-4 rounded-lg hover:bg-gray-100 transition">
                   Réserver cette formule
                 </button>
               </div>

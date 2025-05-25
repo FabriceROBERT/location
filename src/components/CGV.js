@@ -7,7 +7,7 @@ export default function CGV() {
     <div>
       <Navbar />
       <div className="max-w-4xl mx-auto px-6 py-12 text-gray-800">
-        <h1 className="text-3xl font-bold mb-6 text-center">
+        <h1 className="text-3xl mt-20 font-bold mb-6 text-center">
           Conditions Générales de Vente – Festif Location
         </h1>
 
