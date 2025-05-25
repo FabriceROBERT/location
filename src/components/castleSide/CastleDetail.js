@@ -64,11 +64,11 @@ export default function CastleDetail() {
 
   return (
     <div>
-      <div className="overflow-x-auto scrollbar-hide snap-x snap-mandatory flex gap-6 pb-4 lg:block lg:space-y-8">
+      <div className="flex flex-nowrap gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide px-4 py-6 lg:flex-wrap lg:overflow-visible lg:px-0">
         {castles.map((castle, index) => (
           <div
             key={index}
-            className="min-w-[90%] md:min-w-[70%] lg:min-w-full snap-start">
+            className="snap-start shrink-0 w-[90%] md:w-[70%] lg:w-full">
             <CastleCard {...castle} />
           </div>
         ))}
