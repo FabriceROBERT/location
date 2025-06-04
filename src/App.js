@@ -7,7 +7,7 @@ import VideoboothPage from "./pages/VideoboothPage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import CGV from "./components/CGV";
-
+import Decoration from "./pages/Decoration";
 function App() {
   async function sendMessageToAgent(message) {
     const response = await fetch(
@@ -32,6 +32,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/reservation-videobooth" element={<VideoboothPage />} />
           <Route path="/reservation-chateau" element={<CastlePage />} />
+          <Route path="/decoration" element={<Decoration />} />
           <Route path="/cvg" element={<CGV />} />
         </Routes>
       </Router>

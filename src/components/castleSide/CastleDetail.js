@@ -22,8 +22,8 @@ export default function CastleDetail() {
     { icon: "🏠", text: "Intérieur ou extérieur" },
   ];
 
-  const multicolorXXL = [
-    { icon: "🎮", text: "Aire de jeu XXL" },
+  const multicolorXL = [
+    { icon: "🎮", text: "Aire de jeu XL" },
     { icon: "🛝", text: "Multi-toboggan + Grande zone de rebond" },
     { icon: "👶", text: "10-12 enfants max" },
     { icon: "🧒", text: "De 5 à 10 ans" },
@@ -49,16 +49,16 @@ export default function CastleDetail() {
       price: 90,
     },
     {
-      title: "Château Multicolore XXL",
+      title: "Château Multicolore XL",
       description:
-        "Notre château gonflable multicolore XXL avec ses toboggans doubles et sa grande zone de jeu ! Parfait pour des groupes plus importants et les enfants plus grands. Avec ses couleurs vives et ses multiples espaces de jeu, c'est l'attraction parfaite pour vos événements.",
+        "Notre château gonflable multicolore XL avec ses toboggans doubles et sa grande zone de jeu ! Parfait pour des groupes plus importants et les enfants plus grands. Avec ses couleurs vives et ses multiples espaces de jeu, c'est l'attraction parfaite pour vos événements.",
       images: [
         { src: ChateauImg4, alt: "Vue principale du château jungle" },
         { src: ChateauImg5, alt: "Vue latérale du château jungle" },
         { src: ChateauImg6, alt: "Vue avec multi-toboggan du château jungle" },
       ],
-      features: multicolorXXL,
-      price: 120,
+      features: multicolorXL,
+      price: 100,
     },
   ];
 
