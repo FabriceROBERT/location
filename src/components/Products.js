@@ -53,7 +53,6 @@ export default function Products({ id }) {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Quand la section devient visible à 20% ou plus
         if (entry.isIntersecting) {
           setIsVisible(true);
           observer.unobserve(entry.target);
@@ -62,7 +61,7 @@ export default function Products({ id }) {
       {
         root: null,
         rootMargin: "0px",
-        threshold: 0.3, // Déclencher quand 20% de l'élément est visible
+        threshold: 0.3,
       }
     );
 

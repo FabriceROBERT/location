@@ -82,7 +82,7 @@ export default function Steps({ id }) {
     },
     {
       name: "Prestige",
-      price: "449€",
+      price: "549€",
       bg: "bg-indigo-600",
       features: [
         "4h de location",
@@ -163,15 +163,17 @@ export default function Steps({ id }) {
                     ))}
                   </ul>
                 </div>
-                <button
-                  onClick={() =>
-                    document
-                      .getElementById("Booking")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="mt-6 w-full bg-white text-indigo-600 font-semibold py-2 px-4 rounded-lg hover:bg-gray-100 transition">
-                  Réserver cette formule
-                </button>
+                <div className="heroTopFont ">
+                  <button
+                    onClick={() =>
+                      document
+                        .getElementById("Booking")
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
+                    className="mt-6 w-full bg-white text-indigo-600 font-semibold py-2 px-4 rounded-lg hover:bg-gray-100 transition">
+                    Réserver cette formule
+                  </button>
+                </div>
               </div>
             ))}
           </div>

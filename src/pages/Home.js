@@ -12,7 +12,6 @@ export default function Home() {
       <Header />
       <Galery />
       <Products id="Products" className="snap-start" />
-      {/* <Slider /> */}
       <Booking className="snap-start" id="Booking" />
       <Footer />
     </div>
