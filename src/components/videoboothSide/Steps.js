@@ -54,6 +54,19 @@ export default function Steps({ id }) {
 
   const formulas = [
     {
+      name: "Birthday",
+      price: "150€",
+      bg: "bg-indigo-600",
+      features: [
+        "1h de location",
+        "Animateurs présents sur place",
+        "Vidéos illimitées",
+        "Filtres personnalisés, musique au choix",
+        "Livraison et désinstallation",
+        "(Uniquement en Ile-de-France)",
+      ],
+    },
+    {
       name: "Essentiel",
       price: "249€",
       bg: "bg-indigo-600",
@@ -63,6 +76,7 @@ export default function Steps({ id }) {
         "Vidéos illimitées",
         "Filtres personnalisés, musique au choix",
         "Livraison et désinstallation",
+        "Eclairage exterieur",
       ],
     },
     {
@@ -145,7 +159,7 @@ export default function Steps({ id }) {
               Nos formules
             </h3>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-4 gap-6">
             {formulas.map((formule, index) => (
               <div
                 key={index}
